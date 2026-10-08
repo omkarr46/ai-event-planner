@@ -11,8 +11,8 @@ if (!token || !user) {
 // ============================================================
 //  MODE SWITCH
 // ============================================================
-const MODE = "backend"; // "mock" or "backend"
-const BACKEND_URL = "https://ai-event-planner-abc123.onrender.com";
+const MODE = "backend";
+const BACKEND_URL = "https://ai-event-planner-gwt5.onrender.com";
 
 const generateBtn = document.getElementById("generateBtn");
 const resultDiv = document.getElementById("result");
@@ -75,7 +75,6 @@ async function generatePlan() {
       const data = await response.json();
 
       if (response.status === 401) {
-        // Token invalid or expired — force re-login
         alert("Session expired. Please log in again.");
         localStorage.removeItem("eventPlannerToken");
         localStorage.removeItem("eventPlannerUser");
@@ -106,7 +105,7 @@ async function generatePlan() {
   } catch (err) {
     let friendlyMsg = err.message;
     if (err.message.includes("Failed to fetch")) {
-      friendlyMsg = "Cannot reach backend. Make sure it's running on http://localhost:5000 (npm start in the Backend folder).";
+      friendlyMsg = "Cannot reach backend. The server may be starting up (free tier sleeps). Please wait 30 seconds and try again.";
     } else if (err.message.includes("429")) {
       friendlyMsg = "Too many requests. Please wait a minute and try again.";
     } else if (err.message.includes("401") || err.message.includes("token")) {

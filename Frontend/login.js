@@ -1,7 +1,7 @@
 // ============================================================
 //  CONFIG
 // ============================================================
-const BACKEND_URL = "https://ai-event-planner-abc123.onrender.com";
+const BACKEND_URL = "https://ai-event-planner-gwt5.onrender.com";
 
 // ============================================================
 //  ELEMENTS
