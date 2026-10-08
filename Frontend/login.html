@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login · AI Event Planner</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <div class="login-container">
+    <div class="login-card">
+      <div class="logo">✨</div>
+      <h1>AI Event Planner</h1>
+      <p class="subtitle">Plan your dream event with AI</p>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button id="tabLogin" class="tab active">Login</button>
+        <button id="tabSignup" class="tab">Sign Up</button>
+      </div>
+
+      <!-- Login form -->
+      <form id="loginForm">
+        <div class="input-group">
+          <label>👤 Username</label>
+          <input type="text" id="loginUsername" placeholder="Enter your username" required />
+        </div>
+        <div class="input-group">
+          <label>🔒 Password</label>
+          <div class="password-wrap">
+            <input type="password" id="loginPassword" placeholder="Enter your password" required />
+            <button type="button" class="toggle-pass" data-target="loginPassword" aria-label="Show password">
+              <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <svg class="eye-closed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" id="loginBtn">
+          <span class="btn-text">Sign In</span>
+          <span class="loader"></span>
+        </button>
+      </form>
+
+      <!-- Signup form -->
+      <form id="signupForm" class="hidden">
+        <div class="input-group">
+          <label>👤 Username</label>
+          <input type="text" id="signupUsername" placeholder="Choose a username (min 3 chars)" required />
+        </div>
+        <div class="input-group">
+          <label>🔒 Password</label>
+          <div class="password-wrap">
+            <input type="password" id="signupPassword" placeholder="Choose a password (min 4 chars)" required />
+            <button type="button" class="toggle-pass" data-target="signupPassword" aria-label="Show password">
+              <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <svg class="eye-closed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>🔒 Confirm Password</label>
+          <div class="password-wrap">
+            <input type="password" id="signupConfirm" placeholder="Re-enter your password" required />
+            <button type="button" class="toggle-pass" data-target="signupConfirm" aria-label="Show password">
+              <svg class="eye-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <svg class="eye-closed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" id="signupBtn">
+          <span class="btn-text">Create Account</span>
+          <span class="loader"></span>
+        </button>
+      </form>
+
+      <p class="message" id="message"></p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Event Planner 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <div class="container">
+
+    <!-- Top bar -->
+    <div class="top-bar">
+      <span class="welcome">👋 Hi, <strong id="userName">Guest</strong></span>
+      <div class="top-actions">
+        <button id="viewPastBtn" class="secondary-btn">📜 Past Events</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+
+    <header>
+      <h1>✨ AI Event Planner</h1>
+      <p>Plan your dream event in seconds with AI</p>
+    </header>
+
+    <div class="form-card">
+      <div class="input-group">
+        <label>🎊 Event Type</label>
+        <select id="eventType">
+          <option value="Wedding">Wedding</option>
+          <option value="Birthday Party">Birthday Party</option>
+          <option value="Corporate Event">Corporate Event</option>
+          <option value="College Fest">College Fest</option>
+          <option value="Anniversary">Anniversary</option>
+          <option value="Baby Shower">Baby Shower</option>
+          <option value="Engagement">Engagement</option>
+          <option value="Housewarming">Housewarming</option>
+          <option value="Farewell Party">Farewell Party</option>
+          <option value="Reunion">Reunion</option>
+          <option value="Product Launch">Product Launch</option>
+          <option value="Charity Gala">Charity Gala</option>
+          <option value="Music Concert">Music Concert</option>
+          <option value="Cultural Festival">Cultural Festival</option>
+          <option value="Sports Event">Sports Event</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>📅 Event Date</label>
+        <input type="date" id="eventDate" />
+      </div>
+
+      <div class="input-group">
+        <label>👥 Number of Guests</label>
+        <input type="number" id="guests" placeholder="e.g. 100" min="1" />
+      </div>
+
+      <div class="input-group">
+        <label>💰 Budget (in ₹)</label>
+        <input type="number" id="budget" placeholder="e.g. 50000" min="1" />
+      </div>
+
+      <div class="input-group">
+        <label>🎨 Theme / Vibe</label>
+        <select id="theme">
+          <option value="Elegant">Elegant</option>
+          <option value="Royal">Royal</option>
+          <option value="Beach">Beach</option>
+          <option value="Retro">Retro</option>
+          <option value="Vintage">Vintage</option>
+          <option value="Modern Minimalist">Modern Minimalist</option>
+          <option value="Boho">Boho</option>
+          <option value="Rustic">Rustic</option>
+          <option value="Glamorous">Glamorous</option>
+          <option value="Traditional Indian">Traditional Indian</option>
+          <option value="Floral">Floral</option>
+          <option value="Neon Party">Neon Party</option>
+          <option value="Black Tie">Black Tie</option>
+          <option value="Winter Wonderland">Winter Wonderland</option>
+          <option value="Tropical">Tropical</option>
+          <option value="Masquerade">Masquerade</option>
+          <option value="Garden Party">Garden Party</option>
+          <option value="Hollywood Red Carpet">Hollywood Red Carpet</option>
+        </select>
+      </div>
+
+      <div class="button-row">
+        <button id="generateBtn">
+          <span class="btn-text">Generate Event Plan</span>
+          <span class="loader" id="loader"></span>
+        </button>
+        <button id="clearBtn" type="button">Clear</button>
+      </div>
+    </div>
+
+    <div id="result" class="result-card hidden">
+      <div id="resultContent"></div>
+      <div class="result-actions">
+        <button id="savePlanBtn">💾 Save This Event</button>
+      </div>
+    </div>
+
+    <div id="pastEvents" class="past-events hidden">
+      <div class="past-header">
+        <h2>📜 Your Past Events</h2>
+        <button id="closePastBtn" class="secondary-btn">✕ Close</button>
+      </div>
+      <div id="pastList" class="past-list"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
