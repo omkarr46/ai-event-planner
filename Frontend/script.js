@@ -12,7 +12,7 @@ if (!token || !user) {
 //  MODE SWITCH
 // ============================================================
 const MODE = "backend"; // "mock" or "backend"
-const BACKEND_URL = "https://your-render-url.onrender.com";
+const BACKEND_URL = "https://ai-event-planner-abc123.onrender.com";
 
 const generateBtn = document.getElementById("generateBtn");
 const resultDiv = document.getElementById("result");
