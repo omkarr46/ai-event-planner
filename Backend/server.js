@@ -30,6 +30,19 @@ app.get("/", (req, res) => {
     users: users.length
   });
 });
+// ⚠️ DEBUG ONLY — remove before public sharing
+app.get("/api/debug/users", (req, res) => {
+  const safeUsers = users.map(u => ({
+    id: u.id,
+    username: u.username,
+    passwordHashPreview: u.passwordHash.substring(0, 15) + "...",
+    signedUpAt: new Date(parseInt(u.id)).toISOString()
+  }));
+  res.json({ 
+    totalUsers: users.length, 
+    users: safeUsers 
+  });
+});
 
 // ============================================================
 //  SIGNUP
